@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>02 Bank</h:title>
+    <model>
+      <instance>
+        <hot_02_bank.xlsx id="02_bank">
+          <start/>
+          <today/>
+          <deviceid/>
+          <image/>
+          <osm_bank/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </hot_02_bank.xlsx>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/hot_02_bank.xlsx/start" type="dateTime"/>
+      <bind jr:preload="date" jr:preloadParams="today" nodeset="/hot_02_bank.xlsx/today" type="date"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/hot_02_bank.xlsx/deviceid" type="string"/>
+      <bind nodeset="/hot_02_bank.xlsx/image" type="binary"/>
+      <bind nodeset="/hot_02_bank.xlsx/osm_bank" required="true()" type="binary"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/hot_02_bank.xlsx/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <upload mediatype="image/*" ref="/hot_02_bank.xlsx/image">
+      <label>Take a picture</label>
+    </upload>
+    <upload mediatype="osm/*" ref="/hot_02_bank.xlsx/osm_bank">
+      <label>Bank</label>
+      <hint>Tag the bank</hint>
+      <tag key="amenity">
+        <label>Amenity (required)</label>
+        <item>
+          <label>Bank</label>
+          <value>bank</value>
+        </item>
+      </tag>
+      <tag key="operator">
+        <label>Operator (required)</label>
+        <item>
+          <label>ABC Capital Bank</label>
+          <value>ABC Capital Bank</value>
+        </item>
+        <item>
+          <label>Bank of Africa-Uganda</label>
+          <value>Bank of Africa-Uganda</value>
+        </item>
+        <item>
+          <label>Barclays Bank of Uganda</label>
+          <value>Barclays Bank of Uganda</value>
+        </item>
+        <item>
+          <label>Bank of Baroda</label>
+          <value>Bank of Baroda</value>
+        </item>
+        <item>
+          <label>Bank of India</label>
+          <value>Bank of India</value>
+        </item>
+        <item>
+          <label>Cairo International Bank</label>
+          <value>Cairo International Bank</value>
+        </item>
+        <item>
+          <label>Centenary Rural Development Bank</label>
+          <value>Centenary Rural Development Bank</value>
+        </item>
+        <item>
+          <label>Citibank Uganda</label>
+          <value>Citibank Uganda</value>
+        </item>
+        <item>
+          <label>Crane Bank</label>
+          <value>Crane Bank</value>
+        </item>
+        <item>
+          <label>DFCU Bank</label>
+          <value>DFCU Bank</value>
+        </item>
+        <item>
+          <label>Diamond Trust Bank Uganda</label>
+          <value>Diamond Trust Bank Uganda</value>
+        </item>
+        <item>
+          <label>Ecobank Uganda</label>
+          <value>Ecobank Uganda</value>
+        </item>
+        <item>
+          <label>Equity Bank Uganda</label>
+          <value>Equity Bank Uganda</value>
+        </item>
+        <item>
+          <label>Guaranty Trust Bank</label>
+          <value>Guaranty Trust Bank</value>
+        </item>
+        <item>
+          <label>Finance Trust Bank</label>
+          <value>Finance Trust Bank</value>
+        </item>
+        <item>
+          <label>Housing Finance Bank</label>
+          <value>Housing Finance Bank</value>
+        </item>
+        <item>
+          <label>Imperial Bank</label>
+          <value>Imperial Bank</value>
+        </item>
+        <item>
+          <label>KCB Bank Uganda</label>
+          <value>KCB Bank Uganda</value>
+        </item>
+        <item>
+          <label>NC Bank Uganda</label>
+          <value>NC Bank Uganda</value>
+        </item>
+        <item>
+          <label>Orient Bank</label>
+          <value>Orient Bank</value>
+        </item>
+        <item>
+          <label>Stanbic Bank Uganda</label>
+          <value>Stanbic Bank Uganda</value>
+        </item>
+        <item>
+          <label>Standard Chartered Bank</label>
+          <value>Standard Chartered Bank</value>
+        </item>
+        <item>
+          <label>Tropical Bank</label>
+          <value>Tropical Bank</value>
+        </item>
+        <item>
+          <label>United Bank for Africa</label>
+          <value>United Bank for Africa</value>
+        </item>
+      </tag>
+      <tag key="name">
+        <label>Branch Name (required)</label>
+      </tag>
+      <tag key="opening_hours">
+        <label>Opening hours</label>
+        <item>
+          <label>24/7</label>
+          <value>24/7</value>
+        </item>
+        <item>
+          <label>Mo-Sa 08:00-18:00</label>
+          <value>Mo-Sa 08:00-18:00</value>
+        </item>
+        <item>
+          <label>Mo-Sa 09:00-17:00</label>
+          <value>Mo-Sa 09:00-17:00</value>
+        </item>
+        <item>
+          <label>Mo-Sa 09:00-18:00</label>
+          <value>Mo-Sa 09:00-18:00</value>
+        </item>
+        <item>
+          <label>Mo-Fr 09:00-17:00</label>
+          <value>Mo-Fr 09:00-17:00</value>
+        </item>
+        <item>
+          <label>Mo-Su 09:00-21:00</label>
+          <value>Mo-Su 09:00-21:00</value>
+        </item>
+        <item>
+          <label>Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00</label>
+          <value>Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00</value>
+        </item>
+      </tag>
+      <tag key="addr:city">
+        <label>City (required)</label>
+        <item>
+          <label>Kampala</label>
+          <value>Kampala</value>
+        </item>
+        <item>
+          <label>Mbale</label>
+          <value>Mbale</value>
+        </item>
+        <item>
+          <label>Tororo</label>
+          <value>Tororo</value>
+        </item>
+        <item>
+          <label>Jinja</label>
+          <value>Jinja</value>
+        </item>
+      </tag>
+      <tag key="addr:street">
+        <label>Street</label>
+      </tag>
+      <tag key="addr:housenumber">
+        <label>House/plot number</label>
+      </tag>
+      <tag key="description">
+        <label>Comments</label>
+      </tag>
+    </upload>
+  </h:body>
+</h:html>

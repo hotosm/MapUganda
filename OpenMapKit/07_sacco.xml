@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>07 SACCO</h:title>
+    <model>
+      <instance>
+        <hot_07_sacco.xlsx id="07_sacco">
+          <start/>
+          <today/>
+          <deviceid/>
+          <image/>
+          <osm_sacco/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </hot_07_sacco.xlsx>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/hot_07_sacco.xlsx/start" type="dateTime"/>
+      <bind jr:preload="date" jr:preloadParams="today" nodeset="/hot_07_sacco.xlsx/today" type="date"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/hot_07_sacco.xlsx/deviceid" type="string"/>
+      <bind nodeset="/hot_07_sacco.xlsx/image" type="binary"/>
+      <bind nodeset="/hot_07_sacco.xlsx/osm_sacco" required="true()" type="binary"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/hot_07_sacco.xlsx/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <upload mediatype="image/*" ref="/hot_07_sacco.xlsx/image">
+      <label>Take a picture</label>
+    </upload>
+    <upload mediatype="osm/*" ref="/hot_07_sacco.xlsx/osm_sacco">
+      <label>SACCO</label>
+      <hint>Tag the SACCO</hint>
+      <tag key="amenity">
+        <label>Amenity (required)</label>
+        <item>
+          <label>SACCO</label>
+          <value>sacco</value>
+        </item>
+      </tag>
+      <tag key="operator">
+        <label>Operator (required)</label>
+        <item>
+          <label>Agaru SACCO</label>
+          <value>Agaru SACCO</value>
+        </item>
+        <item>
+          <label>Wazalendo SACCO</label>
+          <value>Wazalendo SACCO</value>
+        </item>
+        <item>
+          <label>Kyamuhunga SACCO</label>
+          <value>Kyamuhunga SACCO</value>
+        </item>
+        <item>
+          <label>Rushere SACCO</label>
+          <value>Rushere SACCO</value>
+        </item>
+        <item>
+          <label>Kakuto SB SACCO</label>
+          <value>Kakuto SB SACCO</value>
+        </item>
+        <item>
+          <label>Saving Club</label>
+          <value>Saving Club</value>
+        </item>
+      </tag>
+      <tag key="name">
+        <label>Branch Name (required)</label>
+      </tag>
+      <tag key="opening_hours">
+        <label>Opening hours</label>
+        <item>
+          <label>24/7</label>
+          <value>24/7</value>
+        </item>
+        <item>
+          <label>Mo-Sa 08:00-18:00</label>
+          <value>Mo-Sa 08:00-18:00</value>
+        </item>
+        <item>
+          <label>Mo-Sa 09:00-17:00</label>
+          <value>Mo-Sa 09:00-17:00</value>
+        </item>
+        <item>
+          <label>Mo-Sa 09:00-18:00</label>
+          <value>Mo-Sa 09:00-18:00</value>
+        </item>
+        <item>
+          <label>Mo-Fr 09:00-17:00</label>
+          <value>Mo-Fr 09:00-17:00</value>
+        </item>
+        <item>
+          <label>Mo-Su 09:00-21:00</label>
+          <value>Mo-Su 09:00-21:00</value>
+        </item>
+        <item>
+          <label>Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00</label>
+          <value>Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00</value>
+        </item>
+      </tag>
+      <tag key="addr:city">
+        <label>City (required)</label>
+        <item>
+          <label>Kampala</label>
+          <value>Kampala</value>
+        </item>
+        <item>
+          <label>Mbale</label>
+          <value>Mbale</value>
+        </item>
+        <item>
+          <label>Tororo</label>
+          <value>Tororo</value>
+        </item>
+        <item>
+          <label>Jinja</label>
+          <value>Jinja</value>
+        </item>
+        <item>
+          <label>Iganga</label>
+          <value>Iganga</value>
+        </item>
+      </tag>
+      <tag key="addr:street">
+        <label>Street</label>
+      </tag>
+      <tag key="addr:housenumber">
+        <label>House/plot number</label>
+      </tag>
+      <tag key="description">
+        <label>Comments</label>
+      </tag>
+    </upload>
+  </h:body>
+</h:html>

@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>11 Health facility</h:title>
+    <model>
+      <instance>
+        <hot_11_health.xlsx id="11_health">
+          <start/>
+          <today/>
+          <deviceid/>
+          <image/>
+          <osm_health/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </hot_11_health.xlsx>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/hot_11_health.xlsx/start" type="dateTime"/>
+      <bind jr:preload="date" jr:preloadParams="today" nodeset="/hot_11_health.xlsx/today" type="date"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/hot_11_health.xlsx/deviceid" type="string"/>
+      <bind nodeset="/hot_11_health.xlsx/image" type="binary"/>
+      <bind nodeset="/hot_11_health.xlsx/osm_health" required="true()" type="binary"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/hot_11_health.xlsx/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <upload mediatype="image/*" ref="/hot_11_health.xlsx/image">
+      <label>Take a picture</label>
+    </upload>
+    <upload mediatype="osm/*" ref="/hot_11_health.xlsx/osm_health">
+      <label>Health Facility</label>
+      <hint>Tag the health facility</hint>
+      <tag key="building">
+        <label>Building (required)</label>
+        <item>
+          <label>Hospital</label>
+          <value>hospital</value>
+        </item>
+      </tag>
+      <tag key="amenity">
+        <label>Amenity (required)</label>
+        <item>
+          <label>Doctors (1-10 people)</label>
+          <value>doctors</value>
+        </item>
+        <item>
+          <label>Clinic (10-20 people)</label>
+          <value>clinic</value>
+        </item>
+        <item>
+          <label>Hospital (20+ people)</label>
+          <value>hospital</value>
+        </item>
+      </tag>
+      <tag key="name">
+        <label>Facility Name (required)</label>
+      </tag>
+      <tag key="building:levels">
+        <label>Building levels (1, 2, 3, etc)</label>
+      </tag>
+      <tag key="building:material">
+        <label>Building material</label>
+        <item>
+          <label>Brick</label>
+          <value>brick</value>
+        </item>
+        <item>
+          <label>Cement blocks</label>
+          <value>cement_block</value>
+        </item>
+        <item>
+          <label>Concrete (poured)</label>
+          <value>concrete</value>
+        </item>
+        <item>
+          <label>Loam (branches+mud)</label>
+          <value>loam</value>
+        </item>
+        <item>
+          <label>Metal</label>
+          <value>metal</value>
+        </item>
+        <item>
+          <label>Plaster</label>
+          <value>plaster</value>
+        </item>
+        <item>
+          <label>Wood</label>
+          <value>wood</value>
+        </item>
+      </tag>
+      <tag key="bed_count">
+        <label>Number of beds</label>
+      </tag>
+      <tag key="addr:city">
+        <label>City (required)</label>
+        <item>
+          <label>Kampala</label>
+          <value>kampala</value>
+        </item>
+        <item>
+          <label>Mbale</label>
+          <value>mbale</value>
+        </item>
+        <item>
+          <label>Tororo</label>
+          <value>tororo</value>
+        </item>
+        <item>
+          <label>Kampala</label>
+          <value>Kampala</value>
+        </item>
+        <item>
+          <label>Mbale</label>
+          <value>Mbale</value>
+        </item>
+        <item>
+          <label>Tororo</label>
+          <value>Tororo</value>
+        </item>
+        <item>
+          <label>Jinja</label>
+          <value>Jinja</value>
+        </item>
+        <item>
+          <label>Iganga</label>
+          <value>Iganga</value>
+        </item>
+      </tag>
+      <tag key="addr:street">
+        <label>Street</label>
+      </tag>
+      <tag key="addr:housenumber">
+        <label>House/plot number</label>
+      </tag>
+      <tag key="description">
+        <label>Comments</label>
+      </tag>
+    </upload>
+  </h:body>
+</h:html>

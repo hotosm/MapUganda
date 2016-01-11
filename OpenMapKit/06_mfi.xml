@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>06 MFI</h:title>
+    <model>
+      <instance>
+        <hot_06_mfi.xlsx id="06_mfi">
+          <start/>
+          <today/>
+          <deviceid/>
+          <image/>
+          <osm_mfi/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </hot_06_mfi.xlsx>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/hot_06_mfi.xlsx/start" type="dateTime"/>
+      <bind jr:preload="date" jr:preloadParams="today" nodeset="/hot_06_mfi.xlsx/today" type="date"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/hot_06_mfi.xlsx/deviceid" type="string"/>
+      <bind nodeset="/hot_06_mfi.xlsx/image" type="binary"/>
+      <bind nodeset="/hot_06_mfi.xlsx/osm_mfi" required="true()" type="binary"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/hot_06_mfi.xlsx/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <upload mediatype="image/*" ref="/hot_06_mfi.xlsx/image">
+      <label>Take a picture</label>
+    </upload>
+    <upload mediatype="osm/*" ref="/hot_06_mfi.xlsx/osm_mfi">
+      <label>Microfinance institution</label>
+      <hint>Tag the MFI</hint>
+      <tag key="amenity">
+        <label>Amenity (required)</label>
+        <item>
+          <label>MFI</label>
+          <value>microfinance</value>
+        </item>
+      </tag>
+      <tag key="operator">
+        <label>Operator (required)</label>
+        <item>
+          <label>Blue Employee Benefits</label>
+          <value>Blue Employee Benefits</value>
+        </item>
+        <item>
+          <label>Letshego Uganda</label>
+          <value>Letshego Uganda</value>
+        </item>
+        <item>
+          <label>Brac Uganda</label>
+          <value>Brac Uganda</value>
+        </item>
+        <item>
+          <label>Ecumenical Church Loan Fund</label>
+          <value>Ecumenical Church Loan Fund</value>
+        </item>
+        <item>
+          <label>Hofokam</label>
+          <value>Hofokam</value>
+        </item>
+        <item>
+          <label>Vision Fund</label>
+          <value>Vision Fund</value>
+        </item>
+      </tag>
+      <tag key="name">
+        <label>Branch Name (required)</label>
+      </tag>
+      <tag key="opening_hours">
+        <label>Opening hours</label>
+        <item>
+          <label>24/7</label>
+          <value>24/7</value>
+        </item>
+        <item>
+          <label>Mo-Sa 08:00-18:00</label>
+          <value>Mo-Sa 08:00-18:00</value>
+        </item>
+        <item>
+          <label>Mo-Sa 09:00-17:00</label>
+          <value>Mo-Sa 09:00-17:00</value>
+        </item>
+        <item>
+          <label>Mo-Sa 09:00-18:00</label>
+          <value>Mo-Sa 09:00-18:00</value>
+        </item>
+        <item>
+          <label>Mo-Fr 09:00-17:00</label>
+          <value>Mo-Fr 09:00-17:00</value>
+        </item>
+        <item>
+          <label>Mo-Su 09:00-21:00</label>
+          <value>Mo-Su 09:00-21:00</value>
+        </item>
+        <item>
+          <label>Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00</label>
+          <value>Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00</value>
+        </item>
+      </tag>
+      <tag key="addr:city">
+        <label>City (required)</label>
+        <item>
+          <label>Kampala</label>
+          <value>Kampala</value>
+        </item>
+        <item>
+          <label>Mbale</label>
+          <value>Mbale</value>
+        </item>
+        <item>
+          <label>Tororo</label>
+          <value>Tororo</value>
+        </item>
+        <item>
+          <label>Jinja</label>
+          <value>Jinja</value>
+        </item>
+      </tag>
+      <tag key="addr:street">
+        <label>Street</label>
+      </tag>
+      <tag key="addr:housenumber">
+        <label>House/plot number</label>
+      </tag>
+      <tag key="description">
+        <label>Comments</label>
+      </tag>
+    </upload>
+  </h:body>
+</h:html>

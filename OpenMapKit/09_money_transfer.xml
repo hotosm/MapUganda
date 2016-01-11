@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>09 Misc/money transfer</h:title>
+    <model>
+      <instance>
+        <hot_09_money_transfer.xlsx id="09_money_transfer">
+          <start/>
+          <today/>
+          <deviceid/>
+          <image/>
+          <osm_money_transfer/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </hot_09_money_transfer.xlsx>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/hot_09_money_transfer.xlsx/start" type="dateTime"/>
+      <bind jr:preload="date" jr:preloadParams="today" nodeset="/hot_09_money_transfer.xlsx/today" type="date"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/hot_09_money_transfer.xlsx/deviceid" type="string"/>
+      <bind nodeset="/hot_09_money_transfer.xlsx/image" type="binary"/>
+      <bind nodeset="/hot_09_money_transfer.xlsx/osm_money_transfer" required="true()" type="binary"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/hot_09_money_transfer.xlsx/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <upload mediatype="image/*" ref="/hot_09_money_transfer.xlsx/image">
+      <label>Take a picture</label>
+    </upload>
+    <upload mediatype="osm/*" ref="/hot_09_money_transfer.xlsx/osm_money_transfer">
+      <label>Misc/money transfer</label>
+      <hint>Tag the money transfer</hint>
+      <tag key="amenity">
+        <label>Amenity (required)</label>
+        <item>
+          <label>Misc/money transfer</label>
+          <value>money_transfer</value>
+        </item>
+      </tag>
+      <tag key="network">
+        <label>Network (required)</label>
+        <item>
+          <label>Western Union</label>
+          <value>Western Union</value>
+        </item>
+        <item>
+          <label>MoneyGram</label>
+          <value>MoneyGram</value>
+        </item>
+        <item>
+          <label>Remit</label>
+          <value>Remit</value>
+        </item>
+        <item>
+          <label>EzeeMoney</label>
+          <value>EzeeMoney</value>
+        </item>
+        <item>
+          <label>MicroPay</label>
+          <value>MicroPay</value>
+        </item>
+        <item>
+          <label>Payway</label>
+          <value>Payway</value>
+        </item>
+      </tag>
+      <tag key="name">
+        <label>Business Name (required)</label>
+      </tag>
+      <tag key="operator">
+        <label>Operator (required)</label>
+      </tag>
+      <tag key="opening_hours">
+        <label>Opening hours</label>
+        <item>
+          <label>24/7</label>
+          <value>24/7</value>
+        </item>
+        <item>
+          <label>Mo-Sa 08:00-18:00</label>
+          <value>Mo-Sa 08:00-18:00</value>
+        </item>
+        <item>
+          <label>Mo-Sa 09:00-17:00</label>
+          <value>Mo-Sa 09:00-17:00</value>
+        </item>
+        <item>
+          <label>Mo-Sa 09:00-18:00</label>
+          <value>Mo-Sa 09:00-18:00</value>
+        </item>
+        <item>
+          <label>Mo-Fr 09:00-17:00</label>
+          <value>Mo-Fr 09:00-17:00</value>
+        </item>
+        <item>
+          <label>Mo-Su 09:00-21:00</label>
+          <value>Mo-Su 09:00-21:00</value>
+        </item>
+        <item>
+          <label>Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00</label>
+          <value>Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00</value>
+        </item>
+      </tag>
+      <tag key="addr:city">
+        <label>City (required)</label>
+        <item>
+          <label>Kampala</label>
+          <value>Kampala</value>
+        </item>
+        <item>
+          <label>Mbale</label>
+          <value>Mbale</value>
+        </item>
+        <item>
+          <label>Tororo</label>
+          <value>Tororo</value>
+        </item>
+        <item>
+          <label>Jinja</label>
+          <value>Jinja</value>
+        </item>
+        <item>
+          <label>Iganga</label>
+          <value>Iganga</value>
+        </item>
+      </tag>
+      <tag key="addr:street">
+        <label>Street</label>
+      </tag>
+      <tag key="addr:housenumber">
+        <label>House/plot number</label>
+      </tag>
+      <tag key="description">
+        <label>Comments</label>
+      </tag>
+    </upload>
+  </h:body>
+</h:html>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
+	author="Paul Uithol"
+	version="0.1"
+	shortdescription="Uganda"
+	description="For mapping in Uganda as part of Mapping Financial Services">
+
+    <group name="Uganda">
+	    <group name="Financial Services">
+            <item name="Mobile money agent" type="node,closedway">
+				<space/>
+				<label text="-------------------- Mobile money agent"/>
+				<space/>
+				<key key="amenity" value="mobile_money_agent" />
+				<multiselect key="network" text="Network" values="Airtel Money;Africell Money;MTN Mobile Money;UTL M-Sente;SMART Mobile Money;Vodacom M-Pesa" />
+				<text key="name" text="Business Name (agent)" />
+				<combo key="shop" text="Shop (if selling other goods as well)" values="alcohol, art, bakery, beauty, beverages, bicycle, books, butcher, car, car_parts, car_repair, charcoal, chemist, clothes, convenience, copyshop, cosmetics, doityourself, electronics, furniture, greengrocer, hairdresser, houseware, jewelry, kiosk, mobile_phone, pastry, shoes, stationary, supermarket, tailor, yes" />
+				
+				<space/>
+				<label text="-------------------- Contact details"/>
+				<space/>
+				<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 08:00-18:00, Mo-Sa 09:00-17:00, Mo-Sa 09:00-18:00, Mo-Fr 09:00-17:00, Mo-Su 09:00-21:00, Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00" delete_if_empty="true" />
+				<text key="phone" text="Phone number" />
+				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
+				<text key="addr:street" text="Street"/>
+				<text key="addr:housenumber" text="House number"/>
+				
+				<space/>
+				<label text="-------------------- Handlers"/>
+				<space/>
+				<check key="male" text="Male handler at location?" default="off" delete_if_empty="true" />
+				<check key="female" text="Female handler at location?" default="off" delete_if_empty="true" />
+				<space/>
+			</item>
+			
+			<item name="Bank" type="node,closedway">
+				<space/>
+				<label text="-------------------- Bank"/>
+				<space/>
+				<combo key="amenity" text="Bank type" values="bank, banking_agent" delete_if_empty="true" />
+				<text key="name" text="Branch name" />
+				<combo key="operator" text="Operator" values="ABC Capital Bank, Bank of Africa-Uganda, Barclays Bank of Uganda, Bank of Baroda, Bank of India, Cairo International Bank, Centenary Rural Development Bank, Citibank Uganda, Crane Bank, DFCU Bank, Diamond Trust Bank Uganda, Ecobank Uganda, Equity Bank Uganda, Guaranty Trust Bank, Finance Trust Bank, Housing Finance Bank, Imperial Bank, KCB Bank Uganda, NC Bank Uganda, Orient Bank, Stanbic Bank Uganda, Standard Chartered Bank, Tropical Bank, United Bank for Africa" />
+				<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 09:00-20:00" delete_if_empty="true" />
+				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
+				<text key="addr:street" text="Street"/>
+				<text key="addr:housenumber" text="House number"/>
+				<space/>
+			</item>
+			
+			<item name="ATM" type="node,closedway">
+				<space/>
+				<label text="-------------------- ATM"/>
+				<space/>
+				<key key="amenity" value="atm" />
+				<text key="name" text="ATM location name (if any)" />
+				<combo key="operator" text="Operator" values="ABC Capital Bank, Bank of Africa-Uganda, Barclays Bank of Uganda, Bank of Baroda, Bank of India, Cairo International Bank, Centenary Rural Development Bank, Citibank Uganda, Crane Bank, DFCU Bank, Diamond Trust Bank Uganda, Ecobank Uganda, Equity Bank Uganda, Guaranty Trust Bank, Finance Trust Bank, Housing Finance Bank, Imperial Bank, KCB Bank Uganda, NC Bank Uganda, Orient Bank, Stanbic Bank Uganda, Standard Chartered Bank, Tropical Bank, United Bank for Africa" />
+				<multiselect key="network" text="Network" values="Visa;Mastercard;Maestro;Interswitch;Airtel Money;Africell Money;MTN Mobile Money;UTL M-Sente;SMART Mobile Money;Vodacom M-Pesa" />
+				<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 09:00-20:00" delete_if_empty="true" />
+				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
+				<text key="addr:street" text="Street"/>
+				<text key="addr:housenumber" text="House number"/>
+				<space/>
+			</item>
+			
+			<item name="Credit Institution" type="node,closedway">
+				<space/>
+				<label text="-------------------- Credit Institution"/>
+				<space/>
+				<key key="amenity" value="credit_institution" />
+				<text key="name" text="Branch name" />
+				<combo key="operator" text="Operator" values="Mercantile Credit Bank, PostBank Uganda, Opportunity Bank Uganda, Top Finance Bank Uganda" />
+				<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 09:00-20:00" delete_if_empty="true" />
+				<space/>
+			</item>
+			
+			<item name="MDI (Microfinance Deposit-taking Institution)" type="node,closedway">
+				<space/>
+				<label text="-------------------- MDI" />
+				<space/>
+				<key key="amenity" value="microfinance_bank" />
+				<text key="name" text="Branch name" />
+				<combo key="operator" text="Operator" values="FINCA Uganda, Pride Microfinance, UGAFODE Microfinance, EFC Uganda" />
+				<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 09:00-20:00" delete_if_empty="true" />
+				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
+				<text key="addr:street" text="Street"/>
+				<text key="addr:housenumber" text="House number"/>
+				<space/>
+			</item>
+			
+			<item name="MFI (MicroFinance Institution)" type="node,closedway">
+				<space/>
+				<label text="-------------------- MFI" />
+				<space/>
+				<key key="amenity" value="microfinance" />
+				<text key="name" text="Branch name" />
+				<text key="operator" text="Operator" />
+				<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 09:00-20:00" delete_if_empty="true" />
+				<space/>
+			</item>
+			
+			<item name="SACCO (Savings And Credit Co-operative)" type="node,closedway">
+				<space/>
+				<label text="-------------------- SACCO" />
+				<space/>
+				<key key="amenity" value="sacco" />
+				<text key="name" text="Branch name" />
+				<text key="operator" text="Operator" />
+				<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 09:00-20:00" delete_if_empty="true" />
+				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
+				<text key="addr:street" text="Street"/>
+				<text key="addr:housenumber" text="House number"/>
+				<space/>
+			</item>
+			
+			<item name="Foreign Exchange" type="node,closedway">
+				<space/>
+				<label text="-------------------- Foreign Exchange" />
+				<space/>
+				<key key="amenity" value="bureau_de_change" />
+				<text key="name" text="Branch name" />
+				<text key="operator" text="Operator" />
+				<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 09:00-20:00" delete_if_empty="true" />
+				<space/>
+			</item>
+			
+			<item name="Money Transfer / Other services" type="node,closedway">
+				<space/>
+				<label text="-------------------- Money Transfer / Other service" />
+				<space/>
+				<key key="amenity" value="money_transfer" />
+				<text key="name" text="Branch name" />
+				<combo key="network" text="Network" values="Western Union, MoneyGram, MicroPay, EzeeMoney, Remit" />
+				<text key="operator" text="Operator" />
+				<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 09:00-20:00" delete_if_empty="true" />
+				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
+				<text key="addr:street" text="Street"/>
+				<text key="addr:housenumber" text="House number"/>
+				<space/>
+			</item>
+        </group>
+		
+		<item name="Health facility" type="node,closedway">
+			<space/>
+			<label text="-------------------- Health facility" />
+			<space/>
+			<key key="building" value="hospital" />
+			<text key="name" text="Name" />
+			<combo key="amenity" text="Facility type" values="clinic, doctors, hospital" />
+			<text key="bed_count" text="Bed count"/>
+			<space/>
+			<label text="-------------------- Structural"/>
+			<space/>
+			<text key="building:levels" text="Storeys" default="1"/>
+            <combo key="building:material" text="Material" default="" values="brick,cement_block,concrete,glass,loam,metal,plaster,wood" />
+			<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 09:00-20:00" delete_if_empty="true" />
+			<space/>
+			<label text="-------------------- Address"/>
+			<space/>
+			<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
+			<text key="addr:street" text="Street"/>
+			<text key="addr:housenumber" text="House number"/>
+			<space/>
+		</item>
+		
+		<item name="Educational facility" type="node,closedway">
+			<space/>
+			<label text="-------------------- Educational facility" />
+			<space/>
+			<key key="building" value="school" />
+			<text key="name" text="Name" />
+			<combo key="amenity" text="Facility type" values="college, kindergarten, school, university" />
+			<space/>
+			<label text="-------------------- Structural"/>
+			<space/>
+			<text key="building:levels" text="Storeys" default="1"/>
+            <combo key="building:material" text="Material" default="" values="brick,cement_block,concrete,glass,loam,metal,plaster,wood" />
+			<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 09:00-20:00" delete_if_empty="true" />
+			<space/>
+			<label text="-------------------- Address"/>
+			<space/>
+			<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
+			<text key="addr:street" text="Street"/>
+			<text key="addr:housenumber" text="House number"/>
+			<space/>
+		</item>
+	
+	    <item name="Building" type="node,closedway,relation">
+            <combo key="building" text="Building type" default="yes" values="residential,commercial,commercial;residential,apartments,industrial,public,school,utility,construction,yes"/>
+            <text key="name" text="Name"/>
+			<space/>
+			<label text="-------------------- Function"/>
+			<space/>
+            <combo key="amenity" text="Amenity" values="atm,bank,bar,cafe,clinic,college,courthouse,embassy,fire_station,fuel,hospital,kindergarten,library,marketplace,place_of_worship,pharmacy,police,post_office,pub,public_building,restaurant,school,townhall,yes"/>
+			<label text="If 'place_of_worship', specify religion:"/>
+            <combo key="religion" text="Religion" values="christian,muslim,buddhist,hindu,jewish"/>
+            <combo key="office" default="" text="Office" values="company,government,insurance,lawyer,political_party,yes"/>
+            <combo key="shop" default="" text="Shop" values="alcohol, art, bakery, beauty, beverages, bicycle, books, butcher, car, car_parts, car_repair, charcoal, chemist, clothes, convenience, copyshop, cosmetics, doityourself, electronics, furniture, greengrocer, hairdresser, houseware, jewelry, kiosk, mobile_phone, pastry, shoes, stationary, supermarket, tailor, yes"/>
+			<combo key="tourism" default="" text="Tourism" values="attraction,guest_house,hotel,yes"/>
+			<space/>
+			<label text="-------------------- Structural"/>
+			<space/>
+            <text key="building:levels" text="Storeys" default="1"/>
+            <combo key="building:material" text="Material" default="" values="brick,cement_block,concrete,glass,loam,metal,plaster,wood" />
+			<space/>
+			<label text="-------------------- Address"/>
+			<space/>
+			<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
+			<text key="addr:street" text="Street"/>
+			<text key="addr:housenumber" text="House number"/>
+            <space/>
+        </item>
+
+        <item name="Road" type="way">
+            <combo key="highway" text="Type of road" values="primary,secondary,tertiary,unclassified,residential,track,footway"/>
+            <text key="name" text="Name"/>
+            <combo key="surface" text="Surface" values="asphalt,concrete,unpaved"/>
+            <text key="width" text="Width (meters)" default="" delete_if_empty="true"/>
+            <combo key="smoothness" text="Smoothness" values="good,intermediate,bad,very_bad,horrible"/>
+			<space/>
+            <check key="oneway" text="Oneway?" delete_if_empty="true"/>
+            <space/>
+            <label text="For a bridge, check both boxes below:"/>
+            <check key="bridge" text="Bridge" default="off" delete_if_empty="false"/>
+            <check key="layer" text="Layer 1" value="1"/>
+			<space/>
+        </item>
+	</group>
+</presets>

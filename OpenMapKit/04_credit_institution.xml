@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>04 Credit Institution</h:title>
+    <model>
+      <instance>
+        <hot_04_credit_institution.xlsx id="04_credit_institution">
+          <start/>
+          <today/>
+          <deviceid/>
+          <image/>
+          <osm_ci/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </hot_04_credit_institution.xlsx>
+      </instance>
+      <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/hot_04_credit_institution.xlsx/start" type="dateTime"/>
+      <bind jr:preload="date" jr:preloadParams="today" nodeset="/hot_04_credit_institution.xlsx/today" type="date"/>
+      <bind jr:preload="property" jr:preloadParams="deviceid" nodeset="/hot_04_credit_institution.xlsx/deviceid" type="string"/>
+      <bind nodeset="/hot_04_credit_institution.xlsx/image" type="binary"/>
+      <bind nodeset="/hot_04_credit_institution.xlsx/osm_ci" required="true()" type="binary"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/hot_04_credit_institution.xlsx/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <upload mediatype="image/*" ref="/hot_04_credit_institution.xlsx/image">
+      <label>Take a picture</label>
+    </upload>
+    <upload mediatype="osm/*" ref="/hot_04_credit_institution.xlsx/osm_ci">
+      <label>Credit Institution</label>
+      <hint>Tag the Credit Institution</hint>
+      <tag key="amenity">
+        <label>Amenity (required)</label>
+        <item>
+          <label>Credit Institution</label>
+          <value>credit_institution</value>
+        </item>
+      </tag>
+      <tag key="operator">
+        <label>Operator (required)</label>
+        <item>
+          <label>Mercantile Credit Bank</label>
+          <value>Mercantile Credit Bank</value>
+        </item>
+        <item>
+          <label>PostBank Uganda</label>
+          <value>PostBank Uganda</value>
+        </item>
+        <item>
+          <label>Opportunity Bank Uganda</label>
+          <value>Opportunity Bank Uganda</value>
+        </item>
+        <item>
+          <label>Top Finance Bank Uganda</label>
+          <value>Top Finance Bank Uganda</value>
+        </item>
+      </tag>
+      <tag key="name">
+        <label>Branch Name (required)</label>
+      </tag>
+      <tag key="opening_hours">
+        <label>Opening hours</label>
+        <item>
+          <label>24/7</label>
+          <value>24/7</value>
+        </item>
+        <item>
+          <label>Mo-Sa 08:00-18:00</label>
+          <value>Mo-Sa 08:00-18:00</value>
+        </item>
+        <item>
+          <label>Mo-Sa 09:00-17:00</label>
+          <value>Mo-Sa 09:00-17:00</value>
+        </item>
+        <item>
+          <label>Mo-Sa 09:00-18:00</label>
+          <value>Mo-Sa 09:00-18:00</value>
+        </item>
+        <item>
+          <label>Mo-Fr 09:00-17:00</label>
+          <value>Mo-Fr 09:00-17:00</value>
+        </item>
+        <item>
+          <label>Mo-Su 09:00-21:00</label>
+          <value>Mo-Su 09:00-21:00</value>
+        </item>
+        <item>
+          <label>Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00</label>
+          <value>Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00</value>
+        </item>
+      </tag>
+      <tag key="addr:city">
+        <label>City (required)</label>
+        <item>
+          <label>Kampala</label>
+          <value>Kampala</value>
+        </item>
+        <item>
+          <label>Mbale</label>
+          <value>Mbale</value>
+        </item>
+        <item>
+          <label>Tororo</label>
+          <value>Tororo</value>
+        </item>
+        <item>
+          <label>Jinja</label>
+          <value>Jinja</value>
+        </item>
+      </tag>
+      <tag key="addr:street">
+        <label>Street</label>
+      </tag>
+      <tag key="addr:housenumber">
+        <label>House/plot number</label>
+      </tag>
+      <tag key="description">
+        <label>Comments</label>
+      </tag>
+    </upload>
+  </h:body>
+</h:html>
