@@ -153,15 +153,9 @@
 			<space/>
 			<label text="-------------------- Health facility" />
 			<space/>
-			<key key="building" value="hospital" />
 			<text key="name" text="Name" />
 			<combo key="amenity" text="Facility type" values="clinic, doctors, hospital" />
 			<text key="bed_count" text="Bed count"/>
-			<space/>
-			<label text="-------------------- Structural"/>
-			<space/>
-			<text key="building:levels" text="Storeys" default="1"/>
-            <combo key="building:material" text="Material" default="" values="brick,cement_block,concrete,glass,loam,metal,plaster,wood" />
 			<space/>
 			<label text="-------------------- Address"/>
 			<space/>
@@ -176,14 +170,8 @@
 			<space/>
 			<label text="-------------------- Educational facility" />
 			<space/>
-			<key key="building" value="school" />
 			<text key="name" text="Name" />
 			<combo key="amenity" text="Facility type" values="college, kindergarten, school, university" />
-			<space/>
-			<label text="-------------------- Structural"/>
-			<space/>
-			<text key="building:levels" text="Storeys" default="1"/>
-            <combo key="building:material" text="Material" default="" values="brick,cement_block,concrete,glass,loam,metal,plaster,wood" />
 			<space/>
 			<label text="-------------------- Address"/>
 			<space/>

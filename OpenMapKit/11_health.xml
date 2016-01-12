@@ -30,13 +30,6 @@
     <upload mediatype="osm/*" ref="/hot_11_health.xlsx/osm_health">
       <label>Health Facility</label>
       <hint>Tag the health facility</hint>
-      <tag key="building">
-        <label>Building (required)</label>
-        <item>
-          <label>Hospital</label>
-          <value>hospital</value>
-        </item>
-      </tag>
       <tag key="amenity">
         <label>Amenity (required)</label>
         <item>

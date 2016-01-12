@@ -30,13 +30,6 @@
     <upload mediatype="osm/*" ref="/hot_12_educational.xlsx/osm_educational">
       <label>Educational Facility</label>
       <hint>Tag the educational facility</hint>
-      <tag key="building">
-        <label>Building (required)</label>
-        <item>
-          <label>School</label>
-          <value>school</value>
-        </item>
-      </tag>
       <tag key="amenity">
         <label>Amenity (required)</label>
         <item>
