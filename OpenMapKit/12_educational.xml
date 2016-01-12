@@ -90,40 +90,6 @@
           <value>Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00</value>
         </item>
       </tag>
-      <tag key="building:levels">
-        <label>Building levels (1, 2, 3, etc)</label>
-      </tag>
-      <tag key="building:material">
-        <label>Building material</label>
-        <item>
-          <label>Brick</label>
-          <value>brick</value>
-        </item>
-        <item>
-          <label>Cement blocks</label>
-          <value>cement_block</value>
-        </item>
-        <item>
-          <label>Concrete (poured)</label>
-          <value>concrete</value>
-        </item>
-        <item>
-          <label>Loam (branches+mud)</label>
-          <value>loam</value>
-        </item>
-        <item>
-          <label>Metal</label>
-          <value>metal</value>
-        </item>
-        <item>
-          <label>Plaster</label>
-          <value>plaster</value>
-        </item>
-        <item>
-          <label>Wood</label>
-          <value>wood</value>
-        </item>
-      </tag>
       <tag key="addr:city">
         <label>City (required)</label>
         <item>
@@ -139,12 +105,12 @@
           <value>Tororo</value>
         </item>
         <item>
-          <label>Jinja</label>
-          <value>Jinja</value>
-        </item>
-        <item>
           <label>Iganga</label>
           <value>Iganga</value>
+        </item>
+        <item>
+          <label>Jinja</label>
+          <value>Jinja</value>
         </item>
       </tag>
       <tag key="addr:street">
