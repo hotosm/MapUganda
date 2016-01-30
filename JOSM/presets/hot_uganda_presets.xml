@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 	author="Paul Uithol"
-	version="0.1"
+	version="0.12"
 	shortdescription="Uganda"
 	description="For mapping in Uganda as part of Mapping Financial Services">
 
@@ -31,6 +31,8 @@
 				<check key="male" text="Male handler at location?" default="off" delete_if_empty="true" />
 				<check key="female" text="Female handler at location?" default="off" delete_if_empty="true" />
 				<space/>
+				<text key="description" text="Description" />
+				<space/>
 			</item>
 			
 			<item name="Bank" type="node,closedway">
@@ -44,6 +46,8 @@
 				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
 				<text key="addr:street" text="Street"/>
 				<text key="addr:housenumber" text="House number"/>
+				<space/>
+				<text key="description" text="Description" />
 				<space/>
 			</item>
 			
@@ -60,6 +64,8 @@
 				<text key="addr:street" text="Street"/>
 				<text key="addr:housenumber" text="House number"/>
 				<space/>
+				<text key="description" text="Description" />
+				<space/>
 			</item>
 			
 			<item name="Credit Institution" type="node,closedway">
@@ -73,6 +79,8 @@
 				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
 				<text key="addr:street" text="Street"/>
 				<text key="addr:housenumber" text="House number"/>
+				<space/>
+				<text key="description" text="Description" />
 				<space/>
 			</item>
 			
@@ -88,6 +96,8 @@
 				<text key="addr:street" text="Street"/>
 				<text key="addr:housenumber" text="House number"/>
 				<space/>
+				<text key="description" text="Description" />
+				<space/>
 			</item>
 			
 			<item name="MFI (MicroFinance Institution)" type="node,closedway">
@@ -101,6 +111,8 @@
 				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
 				<text key="addr:street" text="Street"/>
 				<text key="addr:housenumber" text="House number"/>
+				<space/>
+				<text key="description" text="Description" />
 				<space/>
 			</item>
 			
@@ -117,6 +129,8 @@
 				<text key="addr:street" text="Street"/>
 				<text key="addr:housenumber" text="House number"/>
 				<space/>
+				<text key="description" text="Description" />
+				<space/>
 			</item>
 			
 			<item name="Foreign Exchange" type="node,closedway">
@@ -130,6 +144,8 @@
 				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
 				<text key="addr:street" text="Street"/>
 				<text key="addr:housenumber" text="House number"/>
+				<space/>
+				<text key="description" text="Description" />
 				<space/>
 			</item>
 			
@@ -145,6 +161,8 @@
 				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
 				<text key="addr:street" text="Street"/>
 				<text key="addr:housenumber" text="House number"/>
+				<space/>
+				<text key="description" text="Description" />
 				<space/>
 			</item>
         </group>
@@ -164,6 +182,8 @@
 			<text key="addr:street" text="Street"/>
 			<text key="addr:housenumber" text="House number"/>
 			<space/>
+			<text key="description" text="Description" />
+			<space/>
 		</item>
 		
 		<item name="Educational facility" type="node,closedway">
@@ -179,6 +199,8 @@
 			<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
 			<text key="addr:street" text="Street"/>
 			<text key="addr:housenumber" text="House number"/>
+			<space/>
+			<text key="description" text="Description" />
 			<space/>
 		</item>
 	
@@ -212,14 +234,14 @@
         <item name="Road" type="way">
             <combo key="highway" text="Type of road" values="primary,secondary,tertiary,unclassified,residential,track,footway"/>
             <text key="name" text="Name"/>
-            <combo key="surface" text="Surface" values="asphalt,concrete,unpaved"/>
+            <combo key="surface" text="Surface" values="paved,unpaved,asphalt,concrete,sand,gravel"/>
             <text key="width" text="Width (meters)" default="" delete_if_empty="true"/>
             <combo key="smoothness" text="Smoothness" values="good,intermediate,bad,very_bad,horrible"/>
 			<space/>
             <check key="oneway" text="Oneway?" delete_if_empty="true"/>
             <space/>
             <label text="For a bridge, check both boxes below:"/>
-            <check key="bridge" text="Bridge" default="off" delete_if_empty="false"/>
+            <check key="bridge" text="Bridge" delete_if_empty="true"/>
             <check key="layer" text="Layer 1" value="1"/>
 			<space/>
         </item>
