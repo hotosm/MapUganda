@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 	author="Paul Uithol"
-	version="0.12"
+	version="0.13"
 	shortdescription="Uganda"
 	description="For mapping in Uganda as part of Mapping Financial Services">
 
@@ -165,6 +165,38 @@
 				<text key="description" text="Description" />
 				<space/>
 			</item>
+			
+			<item name="Post office" type="node,closedway">
+				<space/>
+				<label text="-------------------- Post office" />
+				<space/>
+				<key key="amenity" value="post_office" />
+				<text key="name" text="Branch name" />
+				<text key="operator" text="Operator" />
+				<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 08:00-18:00, Mo-Sa 09:00-17:00, Mo-Sa 09:00-18:00, Mo-Fr 09:00-17:00, Mo-Su 09:00-21:00, Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00" delete_if_empty="true" />
+				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
+				<text key="addr:street" text="Street"/>
+				<text key="addr:housenumber" text="House number"/>
+				<space/>
+				<text key="description" text="Description" />
+				<space/>
+			</item>
+			
+			<item name="Money lender" type="node,closedway">
+				<space/>
+				<label text="-------------------- Money lender" />
+				<space/>
+				<combo key="shop" text="Type of lender" default="money_lender" values="money_lender, pawnshop"/>
+				<text key="name" text="Branch name" />
+				<text key="operator" text="Operator" />
+				<combo key="opening_hours" text="Opening hours" values="24/7, Mo-Sa 08:00-18:00, Mo-Sa 09:00-17:00, Mo-Sa 09:00-18:00, Mo-Fr 09:00-17:00, Mo-Su 09:00-21:00, Mo-Fr 08:00-18:00; Sa-Su 08:00-15:00" delete_if_empty="true" />
+				<combo key="addr:city" text="City" values="Kampala,Mbale,Tororo,Iganga,Jinja"/>
+				<text key="addr:street" text="Street"/>
+				<text key="addr:housenumber" text="House number"/>
+				<space/>
+				<text key="description" text="Description" />
+				<space/>
+			</item>
         </group>
 		
 		<item name="Health facility" type="node,closedway">
@@ -172,7 +204,7 @@
 			<label text="-------------------- Health facility" />
 			<space/>
 			<text key="name" text="Name" />
-			<combo key="amenity" text="Facility type" values="clinic, doctors, hospital" />
+			<combo key="amenity" text="Facility type" default="clinic" values="clinic, doctors, hospital" />
 			<text key="bed_count" text="Bed count"/>
 			<space/>
 			<label text="-------------------- Address"/>
@@ -191,7 +223,7 @@
 			<label text="-------------------- Educational facility" />
 			<space/>
 			<text key="name" text="Name" />
-			<combo key="amenity" text="Facility type" values="college, kindergarten, school, university" />
+			<combo key="amenity" text="Facility type" default="school" values="college, kindergarten, school, university" />
 			<space/>
 			<label text="-------------------- Address"/>
 			<space/>
